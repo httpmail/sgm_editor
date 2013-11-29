@@ -17,7 +17,7 @@ protected:
     BOOL NeedCheckLegalCharacters() const;
     BOOL IsLegalCharacters(WCHAR wChar) const;
     BOOL IsLegalCharacters(const CString &srcString) const;
-    BOOL IsInRange(const CString &refString, const CString &srcString) const;
+    BOOL IsInRange(const CString &refString, const CString &srcString, BOOL bNoCase = TRUE) const;
     BOOL CopyEditDataToClipboard();
     BOOL ExtractDataFromClipboard(CString& srcString);
 private:
@@ -34,9 +34,10 @@ public:
     afx_msg void OnCut(void);
     afx_msg void OnCopy(void);
     afx_msg void OnPaste(void);
+    afx_msg void OnSelectAll(void);
     afx_msg void OnUndo(void);
-
     afx_msg void OnEnMaxtext(void);
+    virtual BOOL PreTranslateMessage(MSG* pMsg);
 };
 
 
