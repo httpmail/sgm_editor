@@ -38,6 +38,7 @@ public:
     afx_msg void OnUndo(void);
     afx_msg void OnEnMaxtext(void);
     virtual BOOL PreTranslateMessage(MSG* pMsg);
+    virtual LRESULT WindowProc(UINT message, WPARAM wParam, LPARAM lParam);
 };
 
 
